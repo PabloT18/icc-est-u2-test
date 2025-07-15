@@ -58,7 +58,7 @@ jobs:
 
         java -jar lib/junit-platform-console-standalone-1.7.0.jar \
           --class-path "bin:lib/*:lib/validadores-evaluacion.jar" \
-          
+          --select-class test.LibroControllerTestSet \
           --select-class test.LibroControllerTestMap \
           --details tree \
           --disable-ansi-colors \

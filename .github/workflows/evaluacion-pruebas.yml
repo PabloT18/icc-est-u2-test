@@ -56,13 +56,22 @@ jobs:
       run: |
         mkdir -p resultados
 
+        # Detectar qué clase está presente y ejecutar sólo esa
+        if javap -cp bin test.LibroControllerTestSet > /dev/null 2>&1; then
+          SELECT_CLASS="test.LibroControllerTestSet"
+        elif javap -cp bin test.LibroControllerTestMap > /dev/null 2>&1; then
+          SELECT_CLASS="test.LibroControllerTestMap"
+        else
+          echo "No se encontró ninguna clase de test"
+          exit 1
+        fi
+
         java -jar lib/junit-platform-console-standalone-1.7.0.jar \
           --class-path "bin:lib/*:lib/validadores-evaluacion.jar" \
-
-          --select-class test.LibroControllerTestMap \
+          --select-class "$SELECT_CLASS" \
           --details tree \
           --disable-ansi-colors \
-          | tee resultados/salida.txt
+        | tee resultados/salida.txt
 
 
     - name: Leer nombre y correo del estudiante

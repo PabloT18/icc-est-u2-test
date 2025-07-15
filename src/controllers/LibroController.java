@@ -11,7 +11,8 @@ import models.Book;
 public class LibroController {
 
     public Set<Book> procesarConTreeSet(List<Book> libros) {
-        return new TreeSet<>(libros);
+        // return new TreeSet<>(libros);
+        return null;
     }
 
     public Map<Book, Book> procesarConTreeMap(List<Book> libros) {

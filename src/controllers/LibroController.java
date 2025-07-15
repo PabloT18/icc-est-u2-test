@@ -14,4 +14,13 @@ public class LibroController {
         return new TreeSet<>(libros);
     }
 
+    public Map<Book, Book> procesarConTreeMap(List<Book> libros) {
+        Map<Book, Book> mapa = new TreeMap<>();
+        for (Book libro : libros) {
+            mapa.put(libro, libro);
+        }
+        return mapa;
+
+    }
+
 }

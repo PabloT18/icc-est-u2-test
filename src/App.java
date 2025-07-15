@@ -42,11 +42,11 @@ public class App {
         System.out.println(list.size());
         list.forEach(System.out::println);
 
-        System.out.println("\n--- TreeMap ---");
-        controller.procesarConTreeMap(libros);
+        // System.out.println("\n--- TreeMap ---");
+        // controller.procesarConTreeMap(libros);
 
-        Map<Book, Book> list2 = controller.procesarConTreeMap(libros);
-        System.out.println(list2.size());
-        list2.forEach((libro, estado) -> System.out.println(libro));
+        // Map<Book, Book> list2 = controller.procesarConTreeMap(libros);
+        // System.out.println(list2.size());
+        // list2.forEach((libro, estado) -> System.out.println(libro));
     }
 }

@@ -42,7 +42,7 @@ jobs:
         REPO=$(basename "$GITHUB_REPOSITORY")
         ARCHIVO="$USUARIO-$REPO.txt"
 
-        echo "::warning title=Error de compilacion::El código no compiló"
+        echo "::warning title=Error de compilacion::El código no compiló Nota final: 0 / 10"
         echo "👤 Estudiante: $nombre" > "$ARCHIVO"
         echo "✉️ Correo: $correo" >> "$ARCHIVO"
         echo "❌ Error: No se pudo compilar el código" >> "$ARCHIVO"

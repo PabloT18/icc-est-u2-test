@@ -19,6 +19,21 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 
 
 
+ javac --release 17 -cp "src:lib/*" -d bin src/validaciones/ValidacionesLibro.java src/models/Book.java
+jar cf lib/validadores-evaluacion.jar -C bin validaciones
+
+pablo@CV1PTORRESP icc-est-u2-evaluacion % jar tf lib/validadores-evaluacion.jar                                                                  
+
+META-INF/
+META-INF/MANIFEST.MF
+validaciones/
+validaciones/ValidacionesLibro.class
+pablo@CV1PTORRESP icc-est-u2-evaluacion % javap -verbose -cp lib/validadores-evaluacion.jar validaciones.ValidacionesLibro | grep "major version"
+
+  major version: 61
+pablo@CV1PTORRESP icc-est-u2-evaluacion % git add .
+
+
 
 
 javac -cp "src:lib/*" -d bin src/validaciones/ValidacionesLibro.java src/models/Book.java
